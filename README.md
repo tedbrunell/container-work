@@ -52,20 +52,20 @@ In most cases, these files are probably not needed to run an application server 
 
 ### What packages are installed?
 
-basesystem\                                    
-bash\                                
-coreutils-single\                        
-filesystem\                              
-glibc\                                     
-glibc-common\                         
-glibc-minimal-langpack\                    
-libacl\                               
-libattr\                                   
-libcap\                                 
-libselinux\                                   
-libsepol\                                
-ncurses-base\                        
-ncurses-libs\                   
-pcre2\                                      
-redhat-release\                        
-tzdata\
+basesystem                                    
+bash                           
+coreutils-single                        
+filesystem                             
+glibc                                 
+glibc-common                         
+glibc-minimal-langpack                    
+libacl                
+libattr                                   
+libcap                                 
+libselinux                                   
+libsepol                               
+ncurses-base                        
+ncurses-libs                   
+pcre2                                
+redhat-release                       
+tzdata
