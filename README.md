@@ -2,7 +2,7 @@ The purpose of this project is to post dockerfiles and buildah scripts that can 
 
 ## ubi-nano
 
-*"ubi-nano"* is an attempt to create a Red Hat UBI base image that is as small as possible.  Using the included ubi-nano dockerfile, the reulting size is 35.6MB.  Using <a href="https://github.com/fatherlinux/ubi-micro">Scott McCarty's ubi-mini</a> image as a starting point, I was able to remove one additional package to reduce the size another 700KB.
+*"ubi-nano"* is an attempt to create a Red Hat UBI based image that is as small as possible and without bloat from a package manager or uneeded packages.  Using the included ubi-nano dockerfile, the reulting size is 35.6MB.  Using <a href="https://github.com/fatherlinux/ubi-micro">Scott McCarty's excellent ubi-mini</a> file as a starting point, I was able to experiment with removing additional packages and the effects of those removals on package size and container functionality.  I ended up remove one additional package, after the intitial install completes, to reduce the size by another 700KB.
 
 ### So, what was removed?
 The "setup" package was removed post install.  This file, according to dnf info, "contains a set of important system configuration and setup files, such as passwd, group, and profile."  The files that this package creates (and are subsequently removed) are:
