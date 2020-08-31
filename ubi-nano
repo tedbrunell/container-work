@@ -1,0 +1,29 @@
+FROM registry.access.redhat.com/ubi8/ubi AS ubi-nano-build
+MAINTAINER Ted Brunell tbrunell@redhat.com
+RUN mkdir -p /mnt/rootfs
+
+RUN yum repolist
+RUN yum install\
+ coreutils-single glibc-minimal-langpack\
+ --installroot /mnt/rootfs\
+ --releasever 8\
+ --setopt=module_platform_id=platform:el8\
+ --setopt=install_weak_deps=false\
+ --setopt=tsflags=nodocs\
+ --setopt=override_install_langs=en_US.utf8\
+ -y
+
+RUN yum remove\
+ setup\
+ --installroot /mnt/rootfs\
+ --releasever 8\
+ --exclude=redhat-release\
+ -y
+
+RUN rm -rf /mnt/rootfs/var/cache/*
+RUN rm -rf /mnt/rootfs/var/lib/rpm
+
+FROM scratch AS ubi8-nano
+COPY --from=ubi-nano-build /mnt/rootfs/ /
+LABEL name=ubi8-nano
+CMD /bin/sh
