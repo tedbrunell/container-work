@@ -49,3 +49,23 @@ The "setup" package was removed post install.  This file, according to dnf info,
 /var/log/lastlog
 
 In most cases, these files are probably not needed to run an application server within a container and their removal may help with some security aspects of the container itself 
+
+### What packages are installed?
+
+basesystem\                                    
+bash\                                
+coreutils-single\                        
+filesystem\                              
+glibc\                                     
+glibc-common\                         
+glibc-minimal-langpack\                    
+libacl\                               
+libattr\                                   
+libcap\                                 
+libselinux\                                   
+libsepol\                                
+ncurses-base\                        
+ncurses-libs\                   
+pcre2\                                      
+redhat-release\                        
+tzdata\
